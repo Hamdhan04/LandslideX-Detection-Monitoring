@@ -1,51 +1,82 @@
-# LandslideX
+Here is the comprehensive content for your **LandslideX** README. You can copy and paste this directly into your `README.md` file.
 
- LandslideX is a real-time AI forecasting and risk monitoring system.
+# LandslideX: Vulnerability Assessment & Risk Monitor
 
-## Project Structure
-*   **ai_engine/**: Python scripts for data ingestion and AI model inference.
-*   **backend/**: FastAPI backend service.
-*   **frontend/**: ReactJS dashboard.
+**LandslideX** is a machine-learning-powered geospatial platform designed to identify and monitor landslide-prone regions in Tamil Nadu. By integrating **Google Earth Engine (GEE)** with **TensorFlow**, the project analyzes historical terrain data and precipitation patterns to generate a static vulnerability heatmap, enabling long-term disaster planning and risk awareness.
 
-## Setup Instructions
+## Key Features
 
-### 1. Prerequisites
-*   Python 3.9+
-*   Node.js 16+
-*   Google Maps API Key
-*   OpenWeather API Key
+* **Vulnerability Assessment Map:** Visualizes high, medium, and low-risk zones across Tamil Nadu using a standardized Red/Yellow/Green color-coding scheme.
+* **Historical Data Mode:** Analyzes 10+ years of satellite and meteorological records (SRTM, CHIRPS) to determine baseline susceptibility without requiring real-time API keys.
+* **Virtual Risk Simulation:** A built-in simulator that generates random environmental scenarios (slope, rainfall, soil moisture) to demonstrate model triggers and system alerts.
+* **Satellite Hybrid Interface:** High-resolution satellite views layered with street-level infrastructure data to identify vulnerable roads and buildings.
+* **Model Confidence Reporting:** Displays a real-time confidence score for predictions based on the underlying dataset quality.
 
-### 2. Backend Setup
+## Tech Stack
+
+* **Backend:** Python (FastAPI), TensorFlow (.h5 model).
+* **Geospatial Processing:** Google Earth Engine (GEE) Python API.
+* **Frontend:** React.js, Leaflet.js (for interactive mapping).
+* **Data Sources:** * **SRTM:** Digital Elevation Models (DEM) for slope analysis.
+* **CHIRPS/GPM:** Historical precipitation peak tracking.
+* **Sentinel-2:** Land cover and vegetation indexing (NDVI).
+
+
+
+## Installation & Setup
+
+### Prerequisites
+ Python 3.10+ (Python 3.11 recommended for long-term support).
+
+### 1. Clone the Repository
+
 ```bash
-# Install Python dependencies
+git clone https://github.com/your-username/LandslideX.git
+cd LandslideX
+
+```
+
+### 2. Set Up Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
 
-# Run the backend server
+```
+
+### 4. Run the Application
+
+```bash
+# Start the FastAPI Backend
 uvicorn backend.main:app --reload
-```
-The API will be available at `http://localhost:8000`.
 
-### 3. Frontend Setup
-```bash
+# In a separate terminal, start the Frontend
 cd frontend
-
-# Install Node dependencies
 npm install
-
-# Start the development server
 npm start
-```
-The Dashboard will be available at `http://localhost:3000`.
 
-### 4. Configuration
-Create a `.env` file in the root directory (already created) and add your API keys:
 ```
-OPENWEATHER_API_KEY=your_key_here
-```
-Update `frontend/src/components/RiskMap.js` with your Google Maps API Key.
 
-## AI Engine
-To run the mock inference engine:
-```bash
-python -m ai_engine.inference
-```
+##  Data Methodology
+
+The prediction engine utilizes a supervised learning approach, weighting topographic factors against historical triggers:
+
+* **Static Risk:** Calculated using slope intensity; areas  are prioritized for high susceptibility.
+* **Historical Trigger:** Integrated CHIRPS daily peak data to identify zones where heavy rains frequently exceed ground saturation thresholds.
+
+##  Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`).
+3. Commit your Changes (`git commit -m 'Add NewFeature'`).
+4. Push to the Branch (`git push origin feature/NewFeature`).
+5. Open a Pull Request.
