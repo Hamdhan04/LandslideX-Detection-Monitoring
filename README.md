@@ -1,5 +1,3 @@
-Here is the comprehensive content for your **LandslideX** README. You can copy and paste this directly into your `README.md` file.
-
 # LandslideX: Vulnerability Assessment & Risk Monitor
 
 **LandslideX** is a machine-learning-powered geospatial platform designed to identify and monitor landslide-prone regions in Tamil Nadu. By integrating **Google Earth Engine (GEE)** with **TensorFlow**, the project analyzes historical terrain data and precipitation patterns to generate a static vulnerability heatmap, enabling long-term disaster planning and risk awareness.
@@ -12,7 +10,7 @@ Here is the comprehensive content for your **LandslideX** README. You can copy a
 * **Satellite Hybrid Interface:** High-resolution satellite views layered with street-level infrastructure data to identify vulnerable roads and buildings.
 * **Model Confidence Reporting:** Displays a real-time confidence score for predictions based on the underlying dataset quality.
 
-## Tech Stack
+##  Tech Stack
 
 * **Backend:** Python (FastAPI), TensorFlow (.h5 model).
 * **Geospatial Processing:** Google Earth Engine (GEE) Python API.
@@ -23,10 +21,12 @@ Here is the comprehensive content for your **LandslideX** README. You can copy a
 
 
 
-## Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
- Python 3.10+ (Python 3.11 recommended for long-term support).
+
+* Python 3.10+ (Python 3.11 recommended for long-term support).
+* A Google Cloud Project with **Earth Engine API** enabled.
 
 ### 1. Clone the Repository
 
@@ -51,7 +51,14 @@ pip install -r requirements.txt
 
 ```
 
-### 4. Run the Application
+### 4. Authenticate Google Earth Engine
+
+```bash
+earthengine authenticate
+
+```
+
+### 5. Run the Application
 
 ```bash
 # Start the FastAPI Backend
@@ -64,14 +71,14 @@ npm start
 
 ```
 
-##  Data Methodology
+## Data Methodology
 
 The prediction engine utilizes a supervised learning approach, weighting topographic factors against historical triggers:
 
 * **Static Risk:** Calculated using slope intensity; areas  are prioritized for high susceptibility.
 * **Historical Trigger:** Integrated CHIRPS daily peak data to identify zones where heavy rains frequently exceed ground saturation thresholds.
 
-##  Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
