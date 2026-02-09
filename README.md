@@ -1,6 +1,6 @@
 # LandslideX: Vulnerability Assessment & Risk Monitor
 
-**LandslideX** is a machine-learning-powered geospatial platform designed to identify and monitor landslide-prone regions in Tamil Nadu. By integrating **Google Earth Engine (GEE)** with **TensorFlow**, the project analyzes historical terrain data and precipitation patterns to generate a static vulnerability heatmap, enabling long-term disaster planning and risk awareness.
+**LandslideX** is a machine-learning-powered geospatial platform designed to identify and monitor landslide-prone regions in Tamil Nadu. The project analyzes historical terrain data and precipitation patterns to generate a static vulnerability heatmap, enabling long-term disaster planning and risk awareness.
 
 ## Key Features
 
@@ -12,7 +12,7 @@
 
 ##  Tech Stack
 
-* **Backend:** Python (FastAPI), TensorFlow (.h5 model).
+* **Backend:** Python (FastAPI).
 * **Geospatial Processing:** Google Earth Engine (GEE) Python API.
 * **Frontend:** React.js, Leaflet.js (for interactive mapping).
 * **Data Sources:** * **SRTM:** Digital Elevation Models (DEM) for slope analysis.
@@ -87,3 +87,4 @@ Contributions are welcome! Please follow these steps:
 3. Commit your Changes (`git commit -m 'Add NewFeature'`).
 4. Push to the Branch (`git push origin feature/NewFeature`).
 5. Open a Pull Request.
+
